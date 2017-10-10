@@ -7,29 +7,51 @@
 
 
 <script>
+    //step 1
     //call to server --index.js
     var socket =io("http://localhost:3000");
 
+    //step 5
     //server return data to clients
-    socket.on("Server-send-data",function(data)
-{
-    $("#content").append(data+ ", ");
-});
+    socket.on("Server-send-back-color",function(data)
+    {
+        $("#content").append(data+ ", ");
+        $("body").attr("bgColor", data);
+    });
 
     $(document).ready(function(){
 
+        //step 2
         //client send data to server
-        $("#mrA").click(function(){
-            socket.emit("Client-send-data","hello I am Mr A-client A (data from client). ");
+        $("#red").click(function(){
+            socket.emit("Client-send-data","red");
+        });
+        //step 2
+        $("#blue").click(function(){
+            socket.emit("Client-send-data","blue");
+        });
+        //step 2
+        $("#yellow").click(function(){
+            socket.emit("Client-send-data","yellow");
         });
     });
 </script>
 
+<style>
+    #red,#blue, #yellow{width:400px; height: 100px}
+    #red{background-color:red}
+    #blue{background-color:blue}
+    #yellow{background-color:yellow}
+</style>
+
+
 </head>
-<body>
+<body bgColor="#000000">
 
-<div id="mrA">Click send</div>
-<h2 id ="content"></h2>
+<div id="red"></div>
+<div id="blue"></div>
+<div id="yellow"></div>
 
+<h2 id="content"></h2>
 </body>
 </html>
