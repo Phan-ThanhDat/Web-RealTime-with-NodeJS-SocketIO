@@ -9,16 +9,27 @@
 <script>
     //call to server --index.js
     var socket =io("http://localhost:3000");
+
+    //server return data to clients
+    socket.on("Server-send-data",function(data)
+{
+    $("#content").append(data+ ", ");
+});
+
     $(document).ready(function(){
-        
+
+        //client send data to server
+        $("#mrA").click(function(){
+            socket.emit("Client-send-data","hello I am Mr A-client A (data from client). ");
+        });
     });
 </script>
 
 </head>
 <body>
-hahahahaha
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+
+<div id="mrA">Click send</div>
+<h2 id ="content"></h2>
 
 </body>
 </html>

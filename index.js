@@ -16,6 +16,14 @@ io.on("connection",function(socket)
     socket.on("disconnect",function(){
         console.log(socket.id + " : disconnection ")
     });
+
+    //server lang nghe tu client
+    socket.on("Client-send-data",function(data)
+{
+    console.log(data + socket.id);
+    // server gui tra lai data cho khach hang client
+    io.sockets.emit("Server-send-data", data+"that is a data from server");
+});
 });
 
 app.get("/",function(req,res)
