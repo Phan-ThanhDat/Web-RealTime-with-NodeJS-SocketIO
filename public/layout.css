@@ -1,0 +1,13 @@
+body{background-color: rgb(212, 212, 211)}
+#wrapper{width:600px  margin=auto}
+#txtUsername{background-color:transparent; border: solid 1px rgb(248, 142, 142)}
+
+#left, #right{min-height: 300px}
+#left{width:30%; float:left ;background-color:rgb(47, 66, 231) }
+#right{width:70%; float:right ; background-color:rgb(133, 233, 175)}
+
+#boxTitle{border: solid 1px black; padding:5px;text-align:center;font-style: bold}
+#boxContent{border:solid 1px black;border-top:none; padding: 5px ;text-align:center}
+#sayHello{text-align:center}
+#listMessages{height: 200px;background-color: rgb(218, 180, 180);margin-bottom: 20px}
+#txtMessage{background-color: rgb(178, 48, 230) transparent; border: solid 1px rgb(210, 230, 97)}

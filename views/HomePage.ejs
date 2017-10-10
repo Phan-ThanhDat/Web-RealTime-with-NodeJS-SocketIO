@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script src="jquery.js"></script>
+<script src ="socket.io/socket.io.js"></script>
+<script src="xuly.js">
+   
+</script>
+<link rel="stylesheet" type="text/css" href="layout.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <div id = "loginform">
+        <h3> What is your name? </h3>
+        <input type="text" id="txtUsername"/>
+        <input type="button" value="Register" id="btnRegister"/>
+    </div>
+        
+    <div id = "chatForm">
+            <div id="left">
+                <div id ="boxTitle"> Users Online</div>
+                <div id ="boxContent"> 
+                    <div class="useronline"> aaa </div>
+                    
+                </div>
+            </div>
+
+            <div id="right">
+                <div id="sayHello">Hello <span id="currentUser">Teo</span>
+                    <input type="button" id="btnLogout" value="Logout">
+                </div>
+
+                <div id="listMessages">
+
+                </div>
+
+               
+               
+            </div>
+            <div id="thongbao">
+
+            </div>
+            <input type="text" id="txtMessage"/>
+            <input type ="button" id="btnSendMessage" value="Send"/>
+    </div>
+</div>
+
+</body>
+</html>
